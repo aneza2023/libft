@@ -6,13 +6,13 @@
 /*   By: ahavrank <ahavrank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 16:16:52 by ahavrank          #+#    #+#             */
-/*   Updated: 2024/05/23 17:04:38 by ahavrank         ###   ########.fr       */
+/*   Updated: 2024/06/11 18:14:59 by ahavrank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	ft_strncmp (const char *s1, const char *s2, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	unsigned int	i;
 
@@ -32,7 +32,7 @@ int	ft_strncmp (const char *s1, const char *s2, size_t n)
 	return (s1[i] - s2[i]);
 }
 
-int	main(void)
+/* int	main(void)
 {
 	char str[50] = "aaaajkfhnkan";
 	char str2[50] = "acaaajhfakh";
@@ -41,4 +41,4 @@ int	main(void)
 	ft_strncmp(str, str2, n);
 	printf("%d",ft_strncmp(str, str2, n));
 	return (0);
-}
+} */

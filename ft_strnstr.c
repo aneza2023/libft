@@ -1,35 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahavrank <ahavrank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/23 13:43:49 by ahavrank          #+#    #+#             */
-/*   Updated: 2024/06/11 18:16:22 by ahavrank         ###   ########.fr       */
+/*   Created: 2024/06/11 18:19:33 by ahavrank          #+#    #+#             */
+/*   Updated: 2024/06/11 20:56:40 by ahavrank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	unsigned int	i;
+	int		i;
+	char	*start;
 
 	i = 0;
-	while (i < n)
+	start = NULL;
+	while (haystack[i] != '\0' && i <= len)
 	{
-		((unsigned char *)s)[i] = (unsigned char)c;
+		if (haystack[i] == needle[i])
+		{
+			start = &((char *)needle)[i];
+		}
 		i++;
 	}
-	return (s);
+	return (start);
 }
 
-/* int	main(void)
+int main(void)
 {
-	char s[50] = "Kukacka kuka na houpacce";
-	int c = 'a';
-	size_t n = 5;
-	printf("%s\n", (char*)ft_memset(s, c, n));
+	char hay[50] = "filip na me divne cuci";
+	char knee[30] = "cuci";
+	size_t len = 25;
+	printf("%s", ft_strnstr(hay, knee, len));
 	return (0);
-} */
+}

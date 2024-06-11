@@ -6,7 +6,7 @@
 /*   By: ahavrank <ahavrank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 16:14:43 by ahavrank          #+#    #+#             */
-/*   Updated: 2024/05/23 18:13:51 by ahavrank         ###   ########.fr       */
+/*   Updated: 2024/06/11 20:07:13 by ahavrank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,11 @@ char	*ft_strrchr(const char *s, int c)
 	return (start);
 }
 
-int	main(void)
+/* int	main(void)
 {
 	const char s[50] = "to be or not to be";
 	int c = 'o';
 	printf("%s", ft_strchr(s, c));
 	return (0);
 }
+ */

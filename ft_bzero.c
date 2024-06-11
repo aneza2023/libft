@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahavrank <ahavrank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/23 13:43:49 by ahavrank          #+#    #+#             */
-/*   Updated: 2024/06/11 18:16:22 by ahavrank         ###   ########.fr       */
+/*   Created: 2024/06/10 13:15:54 by ahavrank          #+#    #+#             */
+/*   Updated: 2024/06/11 18:16:37 by ahavrank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-void	*ft_memset(void *s, int c, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	unsigned int	i;
 
 	i = 0;
 	while (i < n)
 	{
-		((unsigned char *)s)[i] = (unsigned char)c;
+		((unsigned char *)s)[i] = '\0';
 		i++;
 	}
-	return (s);
 }
 
 /* int	main(void)
 {
 	char s[50] = "Kukacka kuka na houpacce";
-	int c = 'a';
 	size_t n = 5;
-	printf("%s\n", (char*)ft_memset(s, c, n));
+	ft_bzero(s, n);
+	printf("%s\n", s);
 	return (0);
 } */

@@ -1,35 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahavrank <ahavrank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/23 13:43:49 by ahavrank          #+#    #+#             */
-/*   Updated: 2024/06/11 18:16:22 by ahavrank         ###   ########.fr       */
+/*   Created: 2024/06/10 13:47:11 by ahavrank          #+#    #+#             */
+/*   Updated: 2024/06/11 18:16:02 by ahavrank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	unsigned int	i;
 
 	i = 0;
-	while (i < n)
+	if (size > 0)
 	{
-		((unsigned char *)s)[i] = (unsigned char)c;
-		i++;
+		while (i < size - 1 && src[i] != '\0')
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
 	}
-	return (s);
+	return (ft_strlen(src));
 }
 
 /* int	main(void)
 {
-	char s[50] = "Kukacka kuka na houpacce";
-	int c = 'a';
-	size_t n = 5;
-	printf("%s\n", (char*)ft_memset(s, c, n));
+	char str1[50] = "Naomi objednala poke bowl.";
+	char str2[50] = "juchuuuuu";
+	size_t size = 0;
+	printf("%zu", ft_strlcpy(str1, str2, size));
 	return (0);
 } */

@@ -6,7 +6,7 @@
 /*   By: ahavrank <ahavrank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 19:27:18 by ahavrank          #+#    #+#             */
-/*   Updated: 2024/05/23 19:48:09 by ahavrank         ###   ########.fr       */
+/*   Updated: 2024/06/11 18:18:58 by ahavrank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,16 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	while ((i < n))
 	{
-		if (((unsigned char*)s1)[i] != ((unsigned char*)s2)[i])
+		if (((unsigned char *)s1)[i] != ((unsigned char *)s2)[i])
 		{
-			return (((unsigned char*)s1)[i] - ((unsigned char*)s2)[i]);
+			return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
 		}
 		i++;
 	}
-	return (((unsigned char*)s1)[i] - ((unsigned char*)s2)[i]);
+	return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
 }
 
-int	main(void)
+/* int	main(void)
 {
 
-}
+} */
