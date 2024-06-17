@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anezkahavrankova <anezkahavrankova@stud    +#+  +:+       +#+        */
+/*   By: ahavrank <ahavrank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 13:04:02 by anezkahavra       #+#    #+#             */
-/*   Updated: 2024/06/17 14:58:27 by anezkahavra      ###   ########.fr       */
+/*   Updated: 2024/06/17 18:33:24 by ahavrank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strdup(const char *s1)
+char    *ft_strdup(const char *s1)
 {
-    char *temp;
-    int i;
+    char    *temp;
+    int     i;
 
     temp = (char*)malloc((ft_strlen(s1) + 1) * sizeof(char));
     if (temp == NULL || (ft_strlen(s1) + 1) * sizeof(char) == SIZE_MAX)
@@ -32,9 +32,9 @@ char *ft_strdup(const char *s1)
     return (temp);
 }
 
-int main(void)
+/* int main(void)
 {
     char str[50] = "hellou";
     printf("%s  ", ft_strdup(str));
     return (0);
-}
+} */
