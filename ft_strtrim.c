@@ -3,45 +3,52 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anezkahavrankova <anezkahavrankova@stud    +#+  +:+       +#+        */
+/*   By: ahavrank <ahavrank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 15:58:07 by anezkahavra       #+#    #+#             */
-/*   Updated: 2024/06/17 16:41:41 by anezkahavra      ###   ########.fr       */
+/*   Updated: 2024/06/17 21:58:13 by ahavrank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strtrim(char const *s1, char const *set)
+int	is_in_set(char *set, char c)
 {
-    char *temp;
-    int i;
-    int k;
-    int j;
+	int	i;
 
-    i = 0;
-    k = 0;
-    j = 0;
-    while (s1[i] != '\0')
-    {
-        while (set[k] != '\0')
-        {
-            if (s1[i] != set[k])
-            {
-                temp[j] = s1[i];
-                k++;
-                j++;
-            }
-            else if (set[k] == set[i])
-                k++;
-        }
-        i++;
-    }
-    temp = (char*)malloc(ft_strlen(s1) * sizeof(char));
-    if (temp == NULL || ft_strlen(s1) * sizeof(char) == SIZE_MAX)
-        return (NULL);
-    else if (temp != NULL && ft_strlen(s1) * sizeof(char) < SIZE_MAX)
-    return (temp);
+	i = 0;
+	while (set[i] != '\0')
+	{
+		if (set[i] == 'c')
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	int		i;
+	int		k;
+	int		j;
+	char	*temp;
+
+	i = 0;
+	while (s1[i] != '\0' && is_in_set(set, s1[i]) == 1)
+		i++;
+	k = ft_strlen(s1) - 1;
+	while (k != i && is_in_set(set, s1[k]) == 1)
+		k--;
+	temp = malloc((k - i) * sizeof(char));
+	if (temp == NULL)
+		return (NULL);
+	j = 0;
+	while (s1[j] != '\0')
+	{
+		temp[j] = s1[j];
+		j++;
+	}
+	return (temp);
 }
 
 int main(void)
@@ -51,3 +58,4 @@ int main(void)
     printf("%s", ft_strtrim(str, set));
     return (0);
 }
+

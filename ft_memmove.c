@@ -6,7 +6,7 @@
 /*   By: ahavrank <ahavrank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 17:34:29 by ahavrank          #+#    #+#             */
-/*   Updated: 2024/06/11 20:20:32 by ahavrank         ###   ########.fr       */
+/*   Updated: 2024/06/17 18:37:24 by ahavrank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 		}
 	}
 	return (dest);
+}
 }
 
 /* int	main(void)
