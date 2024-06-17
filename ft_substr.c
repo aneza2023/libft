@@ -6,7 +6,7 @@
 /*   By: anezkahavrankova <anezkahavrankova@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 14:29:06 by anezkahavra       #+#    #+#             */
-/*   Updated: 2024/06/17 15:33:15 by anezkahavra      ###   ########.fr       */
+/*   Updated: 2024/06/17 15:44:40 by anezkahavra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
     else if (temp != NULL && len * sizeof(char) < SIZE_MAX)
     {
         i = 0;
-        while (i < len - 1 && s[start + 1] != '\0')
+        while (i < len - 1 && s[start + i] != '\0')
         {
             temp[i] = s[start + i]; 
             i++;        
