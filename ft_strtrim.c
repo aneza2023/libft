@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anezkahavrankova <anezkahavrankova@stud    +#+  +:+       +#+        */
+/*   By: ahavrank <ahavrank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 15:58:07 by anezkahavra       #+#    #+#             */
-/*   Updated: 2024/06/18 14:48:09 by anezkahavra      ###   ########.fr       */
+/*   Updated: 2024/06/18 17:16:36 by ahavrank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ int	is_in_set(char const *set, char c)
 	return (0);
 }
 
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		i;
@@ -35,22 +34,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*temp;
 
 	i = 0;
-	while (s1[i] != '\0')
-	{
-		if (is_in_set(set, s1[i]) == 1)
-			i++;
-		else
-			break;
-	}
+	while (s1[i] != '\0' && is_in_set(set, s1[i]) == 1)
+		i++;
 	k = ft_strlen(s1) - 1;
-	while (k != i)
-	{
-		if (is_in_set(set, s1[k]) == 1)
-			k--;
-		else
-			break;
-	}
-	temp = malloc((k - i) * sizeof(char));
+	while (k != i, is_in_set(set, s1[k]) == 1)
+		k--;
+	temp = malloc(((k - i) + 1) * sizeof(char));
 	if (temp == NULL)
 		return (NULL);
 	j = 0;
@@ -64,7 +53,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (temp);
 }
 
-int main(void)
+/* int main(void)
 {
     char str[50] = "jkmkjmllkNAOMIjklmlkj";
     char set[50] = "jkm";
@@ -72,4 +61,4 @@ int main(void)
     printf("%s", ft_strtrim(str, set));
     return (0);
 }
-
+ */
