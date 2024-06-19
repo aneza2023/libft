@@ -6,7 +6,7 @@
 /*   By: ahavrank <ahavrank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 18:29:07 by ahavrank          #+#    #+#             */
-/*   Updated: 2024/06/18 20:54:42 by ahavrank         ###   ########.fr       */
+/*   Updated: 2024/06/19 15:14:53 by ahavrank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,64 +21,68 @@ int	ft_numstrings(const char *s, int c)
 	j = 0;
 	while (s[i] != '\0')
 	{
-		if (s[i] == c)
+		if (i != 0 && s[i] == c && s[i - 1] != c)
 			j++;
-	i++;
-	}
-	return (j);
-}
-char *ft_strchrpodobne(const char *s, int c)
-{
-    int i;
-	char *start;
-
-    i = 0;
-	start = NULL;
-    while (s[i] != '\0')
-    {
-        if (s[i] == c)
-			break;
 		i++;
-		start = &((char *)s)[i];
-    }
-	return (start);
+	}
+	if (s[ft_strlen(s) - 1] == c)
+		j = j - 1;
+	if (s[0] == '\0')
+		j = j - 1;
+	return (j + 1);
 }
 
-int	ft_split(char const *s, char c)
+int	findend(const char *s, int c, int i)
 {
-	int		*count;
-	int		string_index;
-	int		i;
+	while (s[i] != '\0')
+	{
+		if (s[i] == c && s[i - 1] != c)
+			break ;
+		i++;
+	}
+	return (i);
+}
 
-	*count = ft_numstrings(s, c);
-	char **s = malloc((*count + 1)  * (sizeof(char*)));
+char	**ft_split(char const *s, char c)
+{
+	int		str_i;
+	int		i;
+	char	**result;
+
+	result = malloc(((ft_numstrings(s, c)) + 1) * (sizeof(char *)));
+	if (result == NULL)
+		return (NULL);
 	i = 0;
-	string_index = 0;
+	str_i = 0;
 	while (i < ft_strlen(s))
 	{
-		i = 0;
-		while (i < ft_strlen(s))
-		{
-			if (ft_strchrpodobne(s) !=
-			/* if (ft_strrchr - mohlo by se hodit, udelat i do i s touhle funkci, kde string by melo koncit) */
-			buffer[j] = s[i];
-			j++;
+		while (s[i] == c)
 			i++;
-		}
-		if (j > 0)
+		if (i < findend(s, c, i))
 		{
-			buffer[j] = '\0';
-			s[string_index] = malloc(sizeof(char) * (ft_strlen(buffer) + 1));
-			ft_strlcpy(s[string_index], buffer);
-			string_index++;
+			result[str_i] = malloc(sizeof(char) * ((findend(s, c, i) - i) + 1));
+			if (result[str_i] == NULL)
+				return (NULL);
+			ft_strlcpy(result[str_i], &(s[i]), (findend(s, c, i) - i + 1));
+			str_i++;
+			i = findend(s, c, i);
 		}
-		if (i > old_i)
-	} return (s);
+	}
+	result[str_i] = NULL;
+	return (result);
 }
+
 /* int main(void)
 {
-	char const str[60] = "kdybych to byl byval tusil";
-	char c = 'b';
-	printf("%d", ft_split(str, c));
+	char const str[60] = "ANEZKAISVERYCUTE3<3";
+	char c = ' ';
+	int i = 0;
+	char **res = ft_split(str, c);
+	while (res[i] != NULL) {
+		printf("%s\n", res[i]);
+		free(res[i]);
+		i++;
+	}
+	free(res);
 	return (0);
 } */

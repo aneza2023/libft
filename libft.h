@@ -6,7 +6,7 @@
 /*   By: ahavrank <ahavrank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 20:10:38 by ahavrank          #+#    #+#             */
-/*   Updated: 2024/06/17 20:39:00 by ahavrank         ###   ########.fr       */
+/*   Updated: 2024/06/19 16:58:22 by ahavrank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <stdint.h>
+# include <unistd.h>
 
 size_t	ft_strlen(const char *str);
 int		ft_atoi(const char *nptr);
@@ -39,5 +40,7 @@ char	*ft_strdup(const char *s1);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strtrim(char const *s1, char const *set);
 void	*ft_calloc(size_t count, size_t size);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putnbr_fd(int i, int fd);
 
 #endif

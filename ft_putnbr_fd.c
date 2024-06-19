@@ -1,39 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahavrank <ahavrank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/23 16:14:43 by ahavrank          #+#    #+#             */
-/*   Updated: 2024/06/19 11:05:57 by ahavrank         ###   ########.fr       */
+/*   Created: 2024/06/19 15:16:09 by ahavrank          #+#    #+#             */
+/*   Updated: 2024/06/19 16:56:56 by ahavrank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	ft_putnbr_fd(int i, int fd)
 {
-	int		i;
-	char	*start;
-
-	i = 0;
-	start = NULL;
-	while (s[i] != '\0')
+	if (i >= 0 && i < 10)
 	{
-		if (s[i] == c)
-		{
-			start = &((char *)s)[i];
-		}
-		i++;
+		ft_putchar_fd(i + '0', fd);
 	}
-	return (start);
+	else if (i == -2147483648)
+	{
+		write (fd, "-2147483648", 11);
+	}
+	else if (i < 0)
+	{
+		ft_putchar_fd('-', fd);
+		ft_putnbr_fd(i * (-1), fd);
+	}
+	else
+	{
+		ft_putnbr_fd(i / 10, fd);
+		ft_putnbr_fd(i % 10, fd);
+	}
 }
-
 /* int	main(void)
 {
-	const char s[50] = "to be or not to be";
-	int c = 'o';
-	printf("%s", ft_strrchr(s, c));
+	int	i = 12;
+	int fd = 2;
+	printf("%d", ft_putnbr_fd(i, fd));
 	return (0);
 } */

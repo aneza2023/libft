@@ -1,39 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahavrank <ahavrank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/23 16:14:43 by ahavrank          #+#    #+#             */
-/*   Updated: 2024/06/19 11:05:57 by ahavrank         ###   ########.fr       */
+/*   Created: 2024/06/19 16:51:07 by ahavrank          #+#    #+#             */
+/*   Updated: 2024/06/19 16:52:12 by ahavrank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+# include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	ft_putchar_fd(char c, int fd)
 {
-	int		i;
-	char	*start;
-
-	i = 0;
-	start = NULL;
-	while (s[i] != '\0')
-	{
-		if (s[i] == c)
-		{
-			start = &((char *)s)[i];
-		}
-		i++;
-	}
-	return (start);
+	write(fd, &c, 1);
 }
-
-/* int	main(void)
-{
-	const char s[50] = "to be or not to be";
-	int c = 'o';
-	printf("%s", ft_strrchr(s, c));
-	return (0);
-} */
