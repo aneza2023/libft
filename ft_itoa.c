@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahavrank <ahavrank@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anezkahavrankova <anezkahavrankova@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 17:20:46 by ahavrank          #+#    #+#             */
-/*   Updated: 2024/06/19 21:33:39 by ahavrank         ###   ########.fr       */
+/*   Updated: 2024/06/23 23:27:11 by anezkahavra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ char	*ft_itoa(int n)
 	while (n != 0)
 	{
 		if (n < 0)
-			n = n * ( -1);
+			n = n * (-1);
 		string[i] = n % 10 + '0';
 		n = n / 10;
 		i--;

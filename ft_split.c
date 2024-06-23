@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahavrank <ahavrank@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anezkahavrankova <anezkahavrankova@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/18 18:29:07 by ahavrank          #+#    #+#             */
-/*   Updated: 2024/06/19 15:14:53 by ahavrank         ###   ########.fr       */
+/*   Created: 2024/06/18 14:51:36 by anezkahavra       #+#    #+#             */
+/*   Updated: 2024/06/23 23:31:37 by anezkahavra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	ft_numstrings(const char *s, int c)
 	return (j + 1);
 }
 
-int	findend(const char *s, int c, int i)
+unsigned int	findend(const char *s, int c, int i)
 {
 	while (s[i] != '\0')
 	{
@@ -45,16 +45,16 @@ int	findend(const char *s, int c, int i)
 
 char	**ft_split(char const *s, char c)
 {
-	int		str_i;
-	int		i;
-	char	**result;
+	int					str_i;
+	unsigned int		i;
+	char				**result;
 
 	result = malloc(((ft_numstrings(s, c)) + 1) * (sizeof(char *)));
 	if (result == NULL)
 		return (NULL);
 	i = 0;
 	str_i = 0;
-	while (i < ft_strlen(s))
+	while (i < (ft_strlen)(s))
 	{
 		while (s[i] == c)
 			i++;

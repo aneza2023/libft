@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahavrank <ahavrank@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anezkahavrankova <anezkahavrankova@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 12:45:30 by ahavrank          #+#    #+#             */
-/*   Updated: 2024/05/23 15:20:53 by ahavrank         ###   ########.fr       */
+/*   Updated: 2024/06/23 22:35:04 by anezkahavra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_isalnum(int c)
 {
-	if (c >= '0' && c <= '9' || c > 64 && c < 123)
+	if ((c >= '0' && c <= '9') || (c > 64 && c < 123))
 	{
 		return (1);
 	}

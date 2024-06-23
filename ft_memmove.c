@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahavrank <ahavrank@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anezkahavrankova <anezkahavrankova@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 17:34:29 by ahavrank          #+#    #+#             */
-/*   Updated: 2024/06/17 18:37:24 by ahavrank         ###   ########.fr       */
+/*   Updated: 2024/06/23 23:28:05 by anezkahavra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 
 void	*ft_memmove(void *dest, const void *src, size_t len)
 {
@@ -22,8 +21,6 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 	i = 0;
 	dstlen = dest;
 	srclen = src;
-	// while (dest + ft_strlen(dest) == src + ft_strlen(srclen))
-	// {
 	if (dstlen > srclen)
 	{
 		while (len <= i)
@@ -31,6 +28,7 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 			((unsigned char *)dest)[len] = ((unsigned char *)src)[len];
 			len--;
 		}
+	}
 	else
 	{
 		while (len >= i)
@@ -40,7 +38,6 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 		}
 	}
 	return (dest);
-}
 }
 
 /* int	main(void)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahavrank <ahavrank@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anezkahavrankova <anezkahavrankova@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 09:22:12 by anezkahavra       #+#    #+#             */
-/*   Updated: 2024/06/17 20:26:06 by ahavrank         ###   ########.fr       */
+/*   Updated: 2024/06/23 23:27:32 by anezkahavra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*temp;
-	int		i;
+	size_t	i;
 
 	if (count == 0 || size == 0 || (count * size) / size != count)
 		return (NULL);
