@@ -6,7 +6,7 @@
 /*   By: anezkahavrankova <anezkahavrankova@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 17:34:29 by ahavrank          #+#    #+#             */
-/*   Updated: 2024/06/24 10:55:31 by anezkahavra      ###   ########.fr       */
+/*   Updated: 2024/06/24 16:24:49 by anezkahavra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 	const char	*srclen;
 
 	i = 0;
+	if (dest == (void *)0 || src == (void *)0)
+		return (dest);
 	dstlen = dest;
 	srclen = src;
 	if (dstlen > srclen)
