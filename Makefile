@@ -45,7 +45,7 @@ $(NAME):$(OBJS)
 clean: 
 	rm -rf $(OBJS)
 
-fclean:
+fclean: clean
 	rm -rf $(NAME).a
 
 re: fclean all

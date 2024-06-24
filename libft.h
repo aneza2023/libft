@@ -6,7 +6,7 @@
 /*   By: anezkahavrankova <anezkahavrankova@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 20:10:38 by ahavrank          #+#    #+#             */
-/*   Updated: 2024/06/24 00:25:05 by anezkahavra      ###   ########.fr       */
+/*   Updated: 2024/06/24 12:01:45 by anezkahavra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,6 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
-
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 
 #endif
