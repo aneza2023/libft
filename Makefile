@@ -46,6 +46,6 @@ clean:
 	rm -rf $(OBJS)
 
 fclean: clean
-	rm -rf $(NAME).a
+	rm -rf $(NAME)
 
 re: fclean all
