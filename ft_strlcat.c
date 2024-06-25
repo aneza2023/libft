@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anezkahavrankova <anezkahavrankova@stud    +#+  +:+       +#+        */
+/*   By: ahavrank <ahavrank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 00:04:03 by anezkahavra       #+#    #+#             */
-/*   Updated: 2024/06/24 22:26:41 by anezkahavra      ###   ########.fr       */
+/*   Updated: 2024/06/25 17:27:00 by ahavrank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	int		dstlen;
 
 	srcsize = ft_strlen(src);
-	dstlen = ft_strlen(dst);
+	if (dstsize > ft_strlen(dst))
+		dstlen = ft_strlen(dst);
+	else
+		dstlen = dstsize;
 	total = dstlen + srcsize + 1;
 	if (dstsize == 0 || dstsize < (unsigned int)dstlen)
 		return (ft_strlen(src) + dstsize);
@@ -27,7 +30,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		srcsize = dstsize - dstlen - 1;
 	if (srcsize > 0)
 		ft_strlcpy(dst + dstlen, src, srcsize + 1);
-	dst[total] = '\0';
 	return (total - 1);
 }
 

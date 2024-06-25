@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anezkahavrankova <anezkahavrankova@stud    +#+  +:+       +#+        */
+/*   By: ahavrank <ahavrank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 13:31:01 by ahavrank          #+#    #+#             */
-/*   Updated: 2024/06/24 20:25:07 by anezkahavra      ###   ########.fr       */
+/*   Updated: 2024/06/25 17:27:09 by ahavrank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	unsigned int	i;
 
 	i = 0;
-	if (dest == (void *)0 || src == (void *)0)
-		return (dest);
+	if (!dest && !src)
+		return (NULL);
 	while (i < n)
 	{
 		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
@@ -37,7 +37,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	char *src = "kja";
 	size_t srcsize = 50;
 	size_t dstlen;
-	
+
 	dstlen = ft_strlen(dst);
 	ft_memcpy(dst, src, srcsize);
 	return (0);

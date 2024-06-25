@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anezkahavrankova <anezkahavrankova@stud    +#+  +:+       +#+        */
+/*   By: ahavrank <ahavrank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 17:34:29 by ahavrank          #+#    #+#             */
-/*   Updated: 2024/06/24 16:24:49 by anezkahavra      ###   ########.fr       */
+/*   Updated: 2024/06/25 17:25:52 by ahavrank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 	const char	*srclen;
 
 	i = 0;
-	if (dest == (void *)0 || src == (void *)0)
-		return (dest);
+	if (!dest && !src)
+		return (NULL);
 	dstlen = dest;
 	srclen = src;
 	if (dstlen > srclen)
